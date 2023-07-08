@@ -6,9 +6,9 @@ import shutil
 
 fd = open('script.txt', 'r')
 # You'd put the directory of where the images are downwloaded:
-img_dir = '../'
+img_dir = '../../../Downloads/'
 # You'd put the path from where the image is to atleast the img folder for bjc:
-default_path = '../../personal/work/bjc-r/img/'
+default_path = '../bjc-r/img/'
 
 old_img_names = [f for f in os.listdir(img_dir) if 'png' in f.lower()]
 # Sort the list with respect to the time it was downloaded to make sure the image is renamed correctly:
