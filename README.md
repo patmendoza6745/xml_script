@@ -1,5 +1,5 @@
 # XML Image File Reader
-## The purpose of this script is to automate the task of renaming and moving all XML Image files to their respective folders
+## The purpose of this script is to automate the task of renaming and moving all XML Image files to their respective directories within the BJC repository.
 ---
 ### This script will read in a .txt file that you will fill out appropriately as shown below in the template.
 ---
