@@ -4,7 +4,7 @@ import shutil
 # TODO: Get rid of writing .es.png or .png in .txt file
 # TODO: Redundant to rewrite file paths for .es images as their the same as their english counter part.
 
-fd = open('script.txt', 'r')
+fd = open('sample.txt', 'r')
 # You'd put the directory of where the images are downwloaded:
 img_dir = '../../../Downloads/'
 # You'd put the path from where the image is to atleast the img folder for bjc:
@@ -14,22 +14,14 @@ old_img_names = [f for f in os.listdir(img_dir) if 'png' in f.lower()]
 # Sort the list with respect to the time it was downloaded to make sure the image is renamed correctly:
 old_img_names.sort(key=lambda file: os.path.getmtime(img_dir + file))
 
-# Rename all img files
-for img in old_img_names:
-    new_name = img_dir + fd.readline().rstrip()
-    prev_name = img_dir + img
+# Rename and move each img file to its respective directory within the BJC repository.
+for old_img_name in old_img_names:
+    img = fd.readline().rstrip().split(',')
+    new_name = img_dir + img[0]
+    prev_name = img_dir + old_img_name
     os.rename(prev_name, new_name)
-
-new_img_names = [f for f in os.listdir(img_dir) if 'png' in f.lower()]
-# Sort the list with respect to the time it was modified (renamed) to ensure it will be sent to the correct directory.
-new_img_names.sort(key=lambda file: os.path.getmtime(img_dir + file))
-
-fd.readline()  # Skip line
-
-# Move all img files to their respective directories.
-for img in new_img_names:
-    new_path = default_path + fd.readline().rstrip() + img
-    old_path = img_dir + img
+    new_path = default_path + img[1] + '/' + img[0]
+    old_path = img_dir + img[0]
     shutil.move(old_path, new_path)
 
 fd.close()
