@@ -38,7 +38,7 @@ Line 2N: new_file_name_of_img.es_N,file_path_for_img.es_N\
         combine-simple-example.png,3-lists
         map-list-figures.es.png,3-lists
         keep-list-figures.es.png,3-lists
-        combine-list-figures.es.png,3-lists/
+        combine-list-figures.es.png,3-lists
         map-example-1.es.png,3-lists
         keep-items-(last-letter-h)-reporting.es.png,3-lists
         combine-simple-example.es.png,3-lists
