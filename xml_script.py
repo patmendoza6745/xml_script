@@ -4,7 +4,7 @@ import shutil
 # TODO: Get rid of writing .es.png or .png in .txt file
 # TODO: Redundant to rewrite file paths for .es images as their the same as their english counter part.
 
-fd = open('sample.txt', 'r')
+fd = open('script.txt', 'r')
 # You'd put the directory of where the images are downwloaded:
 img_dir = '../../../Downloads/'
 # You'd put the path from where the image is to atleast the img folder for bjc:
@@ -16,7 +16,7 @@ old_img_names.sort(key=lambda file: os.path.getmtime(img_dir + file))
 
 # Rename and move each img file to its respective directory within the BJC repository.
 for old_img_name in old_img_names:
-    img = fd.readline().rstrip().split(',')
+    img = fd.readline().rstrip().split(' ')
     new_name = img_dir + img[0]
     prev_name = img_dir + old_img_name
     os.rename(prev_name, new_name)
